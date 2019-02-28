@@ -54,8 +54,6 @@ class App extends Component {
 .catch(err=>console.log(err))
 
 this.setState({currentPages: number})
-this.setState({currentPages: parseInt(this.state.currentPages) + 1});
-
   }
 handleDecreaseButton(){ 
     this.setState({currentPages: parseInt(this.state.currentPages) - 1});
@@ -73,9 +71,14 @@ this.getPost(1);
 
   }
   render() {
-    
+    let item = this.state.character.filter(items=>{
+       return console.log(items.status)
+    })
     return (
       <div className="App">
+      {
+        item
+      }
       <header className="header">
         <h1 className="logo">React</h1>
         <nav className="main-menu"> <ul className="menu">

@@ -11,6 +11,12 @@ const Character = (props)=>(
      <div className="card-body"><p  className="card-data">GENDER</p> <span className="card-data-span">{props.gender}</span></div>
      <div className="card-body"><p className="card-data">ORIGIN</p><span className="card-data-span">{props.origin}</span></div>
      <div className="card-body"><p className="card-data">LAST LOCATION :</p> <br/><span className="card-data-span">{props.location}</span></div>
+     <div className="episodes">
+     <div className="episode"><h3>Epidose</h3> <span></span></div>
+     <a href={props.episode[0]}>episode 1</a> <br/>
+     <a href={props.episode[2]}>episode 2</a> <br/>
+     <a href={props.episode[3]}>episode 3</a>
+      </div>
      
     </li>
 )
