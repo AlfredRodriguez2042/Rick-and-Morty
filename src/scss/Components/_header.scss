@@ -1,0 +1,36 @@
+.header{
+    background: var(--color-dark);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 6em;
+    align-items: center;
+}
+.logo{
+    color: white;
+    cursor: pointer;
+}
+.menu{
+    display: flex;
+    &-item{
+        list-style: none;
+        width: 100px;
+        color: #ccc;
+        cursor: pointer;
+        &:hover{
+            color: var(--color-accent);
+        }
+    }
+}
+.ctn-title{
+    max-width: 1024px;
+    margin: auto;
+    text-align: center;
+    padding: 6em 0;
+    line-height: 2em;
+
+}
+.search{
+    padding: .4em .5em;
+    border-radius: .5em;
+    border: 0;
+}

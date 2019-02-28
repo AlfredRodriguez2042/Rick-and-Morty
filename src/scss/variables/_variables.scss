@@ -1,0 +1,40 @@
+// Variables de color Css
+
+:root{
+    --color-first      : #007BDF;
+    --color-first-alt  : #006DC6;
+    --color-second     : #00CBFF;
+    --color-second-alt : #00BFF0;
+    --color-third      : #FF3C32;
+    --color-third-alt  : #FF2419;
+    --color-accent     : #FBA905;
+    --color-accent-alt : #F1A000;
+    --color-light      : #F0F0F0;
+    --color-dark       : #282D31;
+    --color-dark-alt   : #141618;
+    --color-border     : #DFE0E0;
+    --color-text       : #53575A;
+    --color-text-light : #BABDBF;
+    --color-body-bg    : #FCFCFC;
+  }
+  
+  // Variables de color Sass
+  // Colors
+  $color-fisrt : #007BDF;
+  $color-first-alt : #006DC6;
+  $color-second : #00CBFF;
+  $color-second-alt : #00BFF0;
+  $color-third : #FF3C32;
+  $color-third-alt : #FF2419;
+  $color-accent : #FBA905;
+  $color-accent-alt : #F1A000;
+  $color-dark : #282D31;
+  $color-dark-alt : #141618;
+  $color-border : #DFE0E0;
+  $color-light : #F6F6F6;
+  $color-text : #53575A;
+  $color-text-light : #BABDBF;
+  $color-body-bg : #FAFDFF;
+  $color-red: #D44700;
+  $color-card-title: #231F20;
+  $color-card-category: #5c5c5c;

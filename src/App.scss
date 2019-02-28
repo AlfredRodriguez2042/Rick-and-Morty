@@ -1,0 +1,12 @@
+/*   This template is based in ITCSS and SMACSS  */
+
+//confing variables / mixins 
+@import './scss/variables/variables';
+
+//base
+@import './scss/base/base';
+@import './scss/typography/typography';
+
+//components
+@import './scss/Components/header';
+@import './scss/Components/cards.scss';
