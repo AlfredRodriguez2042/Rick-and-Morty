@@ -1,0 +1,31 @@
+.ctn-pagination{
+    margin-top: 200px;
+    width: 310px;
+    margin: auto;
+    text-align: center;
+}
+.pagination{
+    display: flex;
+    li{
+        list-style: none;
+        width: auto;
+        padding: 0 .5em;
+        line-height: 2em;
+        border: 1px solid grey;
+        border-right: 0;
+        &:nth-child(9){
+            border-right: 1px solid grey;
+        }
+    }
+    .active{
+        background: steelblue;
+        
+    }
+    a{
+        color: steelblue;
+    }
+    .undefined{
+        color: white;   
+    }
+    
+}

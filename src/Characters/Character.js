@@ -14,8 +14,8 @@ const Character = (props)=>(
      <div className="episodes">
      <div className="episode"><h3>Epidose</h3> <span></span></div>
      <a href={props.episode[0]}>episode 1</a> <br/>
-     <a href={props.episode[2]}>episode 2</a> <br/>
-     <a href={props.episode[3]}>episode 3</a>
+     <a href={props.episode[1]}>episode 2</a> <br/>
+     <a href={props.episode[2]}>episode 3</a>
       </div>
      
     </li>

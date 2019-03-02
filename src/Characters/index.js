@@ -4,7 +4,6 @@ import Character from './Character'
 const Characters = (props) =>(
     <ul className="content-card">
 
-    
         {
             props.character.map((prod,i)=>(
                <Character

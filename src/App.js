@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Pagination from 'react-js-pagination'
 import './App.scss';
 
 import Characters from './Characters'
@@ -10,7 +11,7 @@ class App extends Component {
     this.state = { 
        character:[],
        info:[],
-       currentPages:[],
+       activePage: 25,
        filter : {
         name: '',
         status: '',
@@ -23,7 +24,8 @@ class App extends Component {
     this.getPost = this.getPost.bind(this)
     this.hadleOnSearch = this.hadleOnSearch.bind(this)
     this.handleOnFilter = this.handleOnFilter.bind(this)
-    this.handleIncreaseButton = this.handleIncreaseButton.bind(this)
+    
+   
   }
 
   hadleOnSearch(e){
@@ -41,10 +43,11 @@ class App extends Component {
      ))
     }
 
-  getPost(number){
+  getPost(pageNumber){
     
+   
     console.log(this.state.info)
- fetch("https://rickandmortyapi.com/api/character/?page="+number)
+ fetch(`https://rickandmortyapi.com/api/character/?page=${pageNumber}`)
 .then(res=> res.json())
 .then(res=>  //console.log(res.info),
   this.setState({
@@ -53,32 +56,24 @@ class App extends Component {
 }))
 .catch(err=>console.log(err))
 
-this.setState({currentPages: number})
+console.log(`active page ${pageNumber}`)
+  this.setState({activePage: pageNumber})
+
   }
-handleDecreaseButton(){ 
-    this.setState({currentPages: parseInt(this.state.currentPages) - 1});
-}
-handleIncreaseButton(){ 
-    this.setState({currentPages: parseInt(this.state.currentPages) + 1});
-    console.log(this.state.currentPages)
-}
 
   componentDidMount(){
-    
-this.getPost(1);
+this.getPost(this.state.currentPages);
+console.log(this.state.currentPages)
 
 
 
   }
   render() {
-    let item = this.state.character.filter(items=>{
-       return console.log(items.status)
-    })
+  
+
     return (
       <div className="App">
-      {
-        item
-      }
+
       <header className="header">
         <h1 className="logo">React</h1>
         <nav className="main-menu"> <ul className="menu">
@@ -90,7 +85,20 @@ this.getPost(1);
           <div className="ctn-title"> <h1>The <span className="title">Rick</span> and <span className="title">Morty</span> API</h1></div>
            <Characters character={this.handleOnFilter(this.state.filter, this.state.character)}/>  
         
-      <div> <button onClick={this.getPost}>next</button> </div>     
+      <div className="ctn-pagination">  
+        <Pagination
+         prevPageText='prev'
+         nextPageText='next'
+         firstPageText='first'
+         lastPageText='last'
+      activePage={this.state.activePage}
+      itemsCountPerPage={20}
+      totalItemsCount={493}
+      pageRangeDisplayed={5}
+      onChange={this.getPost}
+      />    
+      </div>  
+      
        </div>
     );
   }
