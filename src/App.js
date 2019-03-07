@@ -24,6 +24,7 @@ class App extends Component {
     this.getPost = this.getPost.bind(this)
     this.hadleOnSearch = this.hadleOnSearch.bind(this)
     this.handleOnFilter = this.handleOnFilter.bind(this)
+    this.getStatus = this.getStatus.bind(this)
     
    
   }
@@ -33,26 +34,27 @@ class App extends Component {
     this.setState({
         filter:newFilter
     })
-     console.log(newFilter)
+     //console.log(newFilter)
     }
     
     handleOnFilter(filter, data){
      let regex = new RegExp(filter.search, 'i')
      return data.filter(q => (
          regex.test(q.name) || regex.test(q.category) || regex.test(q.status)
+         //,console.log(regex.test(q.status))
      ))
+     
     }
 
   getPost(pageNumber){
-    
-   
-    console.log(this.state.info)
- fetch(`https://rickandmortyapi.com/api/character/?page=${pageNumber}`)
+  
+ fetch(`https://rickandmortyapi.com/api/character/?page=${pageNumber}&<query>=<value>`)
 .then(res=> res.json())
 .then(res=>  //console.log(res.info),
   this.setState({
    character: res.results,
    info: res.info
+   
 }))
 .catch(err=>console.log(err))
 
@@ -61,16 +63,21 @@ console.log(`active page ${pageNumber}`)
 
   }
 
+  getStatus(character, data){
+  
+  }
+
   componentDidMount(){
-this.getPost(this.state.currentPages);
-console.log(this.state.currentPages)
+this.getPost();
+this.getStatus();
+
 
 
 
   }
   render() {
-  
 
+    
     return (
       <div className="App">
 
@@ -83,7 +90,10 @@ console.log(this.state.currentPages)
           <Buscador onSearch={this.hadleOnSearch} />
       </header>
           <div className="ctn-title"> <h1>The <span className="title">Rick</span> and <span className="title">Morty</span> API</h1></div>
-           <Characters character={this.handleOnFilter(this.state.filter, this.state.character)}/>  
+          
+           <Characters character={this.handleOnFilter(this.state.filter, this.state.character)}
+      
+           />  
         
       <div className="ctn-pagination">  
         <Pagination

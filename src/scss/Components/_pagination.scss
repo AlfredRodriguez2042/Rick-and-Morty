@@ -13,16 +13,17 @@
         line-height: 2em;
         border: 1px solid grey;
         border-right: 0;
+        background: white;
         &:nth-child(9){
             border-right: 1px solid grey;
         }
     }
     .active{
-        background: steelblue;
+        background: var(--color-dark);
         
     }
     a{
-        color: steelblue;
+        color: var(--color-text);
     }
     .undefined{
         color: white;   

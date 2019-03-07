@@ -18,7 +18,8 @@ const Characters = (props) =>(
                origin={prod.origin.name}
                location={prod.location.name}
                episode={prod.episode}
-               />                
+               />      
+                      
             ))
         }
     </ul>
